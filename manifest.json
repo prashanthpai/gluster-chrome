@@ -1,0 +1,10 @@
+{
+  "name": "Chrome-GlusterFS",
+  "description": "Adds few handy option to right-click menu",
+  "version": "0.1",
+  "permissions": ["contextMenus", "tabs"],
+  "background": {
+    "scripts": ["gluster.js"]
+  },
+  "manifest_version": 2
+}
