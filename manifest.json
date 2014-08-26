@@ -1,6 +1,6 @@
 {
   "name": "Chrome-GlusterFS",
-  "description": "Adds few handy option to right-click menu",
+  "description": "Adds few silly but handy options to right-click menu",
   "version": "0.1",
   "permissions": ["contextMenus", "tabs"],
   "background": {

@@ -9,56 +9,28 @@ function openBugzilla(info, tab){
         chrome.tabs.create({url: "https://bugzilla.redhat.com/show_bug.cgi?id=" + queryString})
     }
 }
-chrome.contextMenus.create({"title": "Bugzilla Bug",
+chrome.contextMenus.create({"title": "RH Bugzilla Bug",
                             "contexts":['selection'],
                             "onclick": openBugzilla});
 
-// Gerrit
-function openGerrit(info, tab){
+// Gerrit GlusterFS
+function openGerritGF(info, tab){
     queryString = info.selectionText.trim()
     if (isNumeric(queryString)){
         chrome.tabs.create({url: "http://review.gluster.org/" + queryString})
     }
 }
-chrome.contextMenus.create({"title": "Gerrit Change",
+chrome.contextMenus.create({"title": "gluster.org Gerrit Change",
                             "contexts":['selection'],
-                            "onclick": openGerrit});
+                            "onclick": openGerritGF});
 
-// glusterfs code
-function openGlusterFS(info, tab){
-    queryString = info.selectionText.trim()
-    chrome.tabs.create({url: "https://github.com/gluster/glusterfs/search?q=" + queryString})
-}
-chrome.contextMenus.create({"title": "Search in GlusterFS source",
-                            "contexts":['selection'],
-                            "onclick": openGlusterFS});
-
-// gluster-swift code
-function openGlusterSwift(info, tab){
-    queryString = info.selectionText.trim()
-    chrome.tabs.create({url: "https://github.com/gluster/gluster-swift/search?q=" + queryString})
-}
-chrome.contextMenus.create({"title": "Search in Gluster-Swift source",
-                            "contexts":['selection'],
-                            "onclick": openGlusterSwift});
-
-// Swift code
-function openSwift(info, tab){
-    queryString = info.selectionText.trim()
-    chrome.tabs.create({url: "https://github.com/openstack/swift/search?q=" + queryString})
-}
-chrome.contextMenus.create({"title": "Search in Openstack Swift source",
-                            "contexts":['selection'],
-                            "onclick": openSwift});
-
-
-// Launchpad gluster-swift
-function openLaunchpad(info, tab){
+// Gerrit OpenStack
+function openGerritOS(info, tab){
     queryString = info.selectionText.trim()
     if (isNumeric(queryString)){
-        chrome.tabs.create({url: "https://bugs.launchpad.net/gluster-swift/+bug/" + queryString})
+        chrome.tabs.create({url: "http://review.openstack.org/" + queryString})
     }
 }
-chrome.contextMenus.create({"title": "Launchpad Bug (gluster-swift)",
+chrome.contextMenus.create({"title": "openstack.org Gerrit Change",
                             "contexts":['selection'],
-                            "onclick": openLaunchpad});
+                            "onclick": openGerritOS});
